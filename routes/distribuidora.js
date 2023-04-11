@@ -4,6 +4,9 @@ const router = express.Router()
 // array para armazenar as distribuidoras
 const distribuidoras = []
 
+// middleware para permitir o uso de JSON no corpo da requisição
+router.use(express.json())
+
 // rota para obter todas as distribuidoras
 router.get('/', (req, res) => {
   res.json(distribuidoras)

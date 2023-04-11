@@ -1,6 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
+// middleware para processar o corpo das requisições como JSON
+router.use(express.json())
+
 // array para armazenar os funcionários
 const funcionarios = []
 

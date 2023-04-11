@@ -1,8 +1,12 @@
 const express = require('express')
+const app = express()
 const router = express.Router()
 
 // array para armazenar os produtos
 const produtos = []
+
+// middleware para fazer o parsing do corpo da requisição como JSON
+app.use(express.json())
 
 // rota para obter todos os produtos
 router.get('/', (req, res) => {
@@ -48,4 +52,8 @@ router.delete('/:id', (req, res) => {
   res.send('Produto removido com sucesso!')
 })
 
-module.exports = router
+// adiciona as rotas ao aplicativo
+app.use('/produtos', router)
+
+// inicia o servidor na porta 3000
+app.listen(3000, () => console.log('Servidor rodando na porta 3000'))

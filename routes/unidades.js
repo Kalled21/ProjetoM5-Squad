@@ -1,5 +1,8 @@
 const express = require('express')
+const app = express()
 const router = express.Router()
+
+app.use(express.json()) // habilita o parser de JSON para o corpo da requisição
 
 // array para armazenar as unidades
 const unidades = []
@@ -48,4 +51,7 @@ router.delete('/:id', (req, res) => {
   res.send('Unidade removida com sucesso!')
 })
 
-module.exports = router
+app.use('/unidades', router) // registra as rotas no app
+
+const PORT = 3000 // define a porta do servidor
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`)) // inicia o servidor
