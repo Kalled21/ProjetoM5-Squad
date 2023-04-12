@@ -1,17 +1,19 @@
 {
   "dependencies": {
     "body-parser": "^1.20.2",
+    "chalk": "^5.2.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "mongoose": "^7.0.3",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "winston": "^3.8.2"
   },
   "name": "projetom5-squad",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
@@ -23,5 +25,6 @@
   },
   "author": "Philipe Almeida",
   "license": "ISC",
-  "description": ""
+  "description": "Hamburgueria-API",
+  "devDependencies": {}
 }
